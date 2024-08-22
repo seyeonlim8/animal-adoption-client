@@ -1,3 +1,6 @@
+import { gql, useQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
+
 const ALL_ANIMALS = gql`
   query getAnimals {
     allAnimals {
@@ -12,7 +15,11 @@ const ALL_ANIMALS = gql`
 
 export default function Animals() {
     const { loading, error, data } = useQuery(ALL_ANIMALS);
-    if (loading) return <p>Loading...</p>;
+    if (loading) {
+        return (
+            <p>Loading...</p>
+        );
+    }
     if (error) {
         console.error(error.message);
         return <p>Error! {error.message}</p>;

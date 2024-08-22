@@ -1,4 +1,4 @@
-import { ApolloClient } from "@apollo/client";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 // The InMemoryCache is a normalized cache that stores data in memory.
 const client = new ApolloClient({

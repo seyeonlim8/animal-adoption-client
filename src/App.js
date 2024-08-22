@@ -1,4 +1,6 @@
-import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Animals from "./routes/Animals";
+import Animal from "./routes/Animal";
 
 function App() {
   return <BrowserRouter>
