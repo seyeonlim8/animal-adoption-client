@@ -175,7 +175,7 @@ export default function Animals() {
                 }}
               />
               <div className={styles.animalDetails}>
-                <h3>{animal.pet_name}</h3>
+                <h3>{animal.pet_name !== null ? animal.pet_name : "Unnamed"}</h3>
                 <p>{animal.age}</p>
                 <p>
                   {animal.addr_city}, {animal.addr_state_code} Shelter
