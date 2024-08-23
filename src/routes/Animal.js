@@ -3,6 +3,7 @@ import { gql, useApolloClient, useQuery } from "@apollo/client";
 import fallbackImage from "../assets/fallback-image.gif";
 import styles from "../App.module.css";
 import { ALL_ANIMALS } from "./Animals";
+import Navbar from "../components/Navbar.js";
 
 // Query for getting animal by pet_id
 const GET_ANIMAL = gql`
@@ -57,17 +58,7 @@ export default function Animal() {
   if (loading) {
     return (
       <div>
-        <header className={styles.navbar}>
-          <div className={styles.logo}>
-            <Link to="/">PURRS</Link>
-          </div>
-          <nav className={styles.navLinks}>
-            <Link to="/animals">Adoption</Link>
-            <a href="#link2">Rescue</a>
-            <a href="#link3">TNR</a>
-            <a href="#link4">Donations</a>
-          </nav>
-        </header>
+        <Navbar /> 
         <div className={styles.loadingText}>Loading...</div>
       </div>
     );

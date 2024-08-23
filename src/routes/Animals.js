@@ -1,8 +1,9 @@
 import { gql, useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
-import styles from "../App.module.css";
+import styles from "../Animals.module.css";
 import fallbackImage from "../assets/fallback-image.gif";
 import { useState } from "react";
+import Navbar from "../components/Navbar.js";
 
 export const ALL_ANIMALS = gql`
   query getAnimals($zip: String!, $range: Int!, $species: String!) {
@@ -70,17 +71,7 @@ export default function Animals() {
   if (loading) {
     return (
       <div>
-        <header className={styles.navbar}>
-          <div className={styles.logo}>
-            <Link to="/">PURRS</Link>
-          </div>
-          <nav className={styles.navLinks}>
-            <Link to="/animals">Adoption</Link>
-            <a href="#link2">Rescue</a>
-            <a href="#link3">TNR</a>
-            <a href="#link4">Donations</a>
-          </nav>
-        </header>
+        <Navbar />
         <div className={styles.loadingText}>Loading...</div>
       </div>
     );
@@ -92,17 +83,7 @@ export default function Animals() {
 
   return (
     <div className={styles.animalsContainer}>
-      <header className={styles.navbar}>
-        <div className={styles.logo}>
-          <Link to="/">PURRS</Link>
-        </div>
-        <nav className={styles.navLinks}>
-          <Link to="/animals">Adoption</Link>
-          <a href="#link2">Rescue</a>
-          <a href="#link3">TNR</a>
-          <a href="#link4">Donations</a>
-        </nav>
-      </header>
+      <Navbar />
 
       <div className={styles.adoptionTitle}>
         Welcome Home Your New Family Member.

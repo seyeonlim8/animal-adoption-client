@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Animals from "./routes/Animals";
 import Animal from "./routes/Animal";
 import Home from "./routes/Home";
+import "./Global.css";
 
 function App() {
   return <BrowserRouter>

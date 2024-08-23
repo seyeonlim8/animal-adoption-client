@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import styles from "../App.module.css"; // Import the CSS module
-import { Link } from "react-router-dom";
+import styles from "../Home.module.css"; // Import the CSS module
 import image1 from "../assets/cat1.jpg";
 import image2 from "../assets/cat2.jpg";
 import image3 from "../assets/cat3.jpg";
 import image4 from "../assets/cat4.jpg";
 import image5 from "../assets/cat5.jpg";
 import image6 from "../assets/cat6.jpg";
+import Navbar from "../components/Navbar.js";
 
 function Home() {
   useEffect(() => {
@@ -26,17 +26,7 @@ function Home() {
 
   return (
     <div className={styles.homeContainer}>
-      <header className={styles.navbar}>
-        <div className={styles.logo}>
-          <Link to="/">PURRS</Link>
-        </div>
-        <nav className={styles.navLinks}>
-          <Link to="/animals">Adoption</Link>
-          <a href="#link2">Rescue</a>
-          <a href="#link3">TNR</a>
-          <a href="#link4">Donations</a>
-        </nav>
-      </header>
+      <Navbar />
 
       <main className={styles.mainContent}>
         <section className={styles.hero}>
@@ -46,7 +36,14 @@ function Home() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <button className={styles.ctaButton}>Find Nearest Shelters</button>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=animal+shelters+near+me"
+            className={styles.ctaButton}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Find Nearest Shelters
+          </a>
           <div className={styles.quoteSection}>
             <blockquote>
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -65,7 +62,7 @@ function Home() {
           </p>
           <div className={styles.supportOptions}>
             <div className={styles.supportOption}>
-              <img alt='adoption' src={image4} className={styles.imageFormat} />
+              <img alt="adoption" src={image4} className={styles.imageFormat} />
               <div className={styles.supportOptionText}>
                 Help rescued cats waiting for a new home at the shelter.
               </div>
@@ -74,7 +71,7 @@ function Home() {
               </a>
             </div>
             <div className={styles.supportOption}>
-              <img alt='rescue' src={image5} className={styles.imageFormat} />
+              <img alt="rescue" src={image5} className={styles.imageFormat} />
               <div className={styles.supportOptionText}>
                 Found a stray cat? Let us know. We can help you.
               </div>
@@ -83,7 +80,7 @@ function Home() {
               </a>
             </div>
             <div className={styles.supportOption}>
-              <img alt='tnr' src={image6} className={styles.imageFormat} />
+              <img alt="tnr" src={image6} className={styles.imageFormat} />
               <div className={styles.supportOptionText}>
                 Support hospitals for TNR (Trap-Neuter-Return) Programs.
               </div>
