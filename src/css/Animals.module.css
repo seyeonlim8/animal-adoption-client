@@ -95,34 +95,47 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 100%;
+  justify-content: flex-start;
+  max-width: 100%;  /* Ensure it doesn't overflow */
   margin: 20px auto;
+  gap: 10px;
+}
+
+.label{
+  font-weight: 600;
+  color: #333;
+  margin-right: 10px;
+  margin-bottom: 12px;
+  font-size: 15px;
 }
 
 .filterForm div {
   flex: 1;
-  margin: 0 10px;
+  min-width: 100px; /* Minimum width to prevent shrinking */
 }
 
-.filterForm label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #333;
-  text-align: left;
-  font-size: 14px;
-}
-
-.filterForm input,
-.filterForm select {
+.filterForm input {
   width: 100%;
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 16px;
   box-sizing: border-box;
   transition: border-color 0.3s ease;
+  margin-left: 1px;
+  margin-top: 3px;
+}
+
+.filterForm select {  
+  width: 100%;
+  padding: 7px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  margin-bottom: 12px;
+  margin-top: 3px;
 }
 
 .filterForm input:focus,
@@ -134,13 +147,16 @@
 .filterForm button {
   background-color: #61cc10;
   color: #fff;
-  padding: 8px 15px;
+  padding: 10px 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 20px;
   transition: background-color 0.3s ease;
+  flex-shrink: 1; /* Allow the button to shrink if necessary */
+  max-width: 130px; /* Limit the button width */
+  height: auto;  /* Automatically adjust height */
+  margin-bottom: 12px;
 }
 
 .filterForm button:hover {

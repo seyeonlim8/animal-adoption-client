@@ -32,7 +32,7 @@ function Home() {
       <main className={styles.mainContent}>
         <section className={styles.hero}>
           <div className={styles.heroOverlay}></div>
-          <h1>Support Stray Cats</h1>
+          <h1>Support Feral Cats</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -55,7 +55,7 @@ function Home() {
         </section>
 
         <section className={styles.supportSection}>
-          <h2>How You Can Support Stray Cats</h2>
+          <h2>How You Can Support Feral Cats</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -74,7 +74,7 @@ function Home() {
             <div className={styles.supportOption}>
               <img alt="rescue" src={image5} className={styles.imageFormat} />
               <div className={styles.supportOptionText}>
-                Found a stray cat? Let us know. We can help you.
+                Found a feral cat? Let us know. We can help you.
               </div>
               <a href="/rescue" className={styles.ctaButton}>
                 Learn More

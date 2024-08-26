@@ -94,7 +94,7 @@ export default function Animals() {
 
       <form onSubmit={handleFormSubmit} className={styles.filterForm}>
         <div>
-          <label htmlFor="zip">ZIP Code:</label>
+          <label htmlFor="zip" className={styles.label}>ZIP Code</label>
           <input
             type="text"
             id="zip"
@@ -107,7 +107,7 @@ export default function Animals() {
           {errors.zip && <p className={styles.errorText}>{errors.zip}</p>}
         </div>
         <div>
-          <label htmlFor="range">Range:</label>
+          <label htmlFor="range" className={styles.label}>Range</label>
           <input
             type="number"
             id="range"
@@ -121,7 +121,7 @@ export default function Animals() {
           {errors.range && <p className={styles.errorText}>{errors.range}</p>}
         </div>
         <div>
-          <label htmlFor="species">Species:</label>
+          <label htmlFor="species" className={styles.label}>Species</label>
           <select
             id="species"
             name="species"
