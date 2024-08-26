@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import styles from "../Home.module.css"; // Import the CSS module
+import styles from "../css/Home.module.css"; // Import the CSS module
 import image1 from "../assets/cat1.jpg";
 import image2 from "../assets/cat2.jpg";
 import image3 from "../assets/cat3.jpg";
@@ -7,6 +7,7 @@ import image4 from "../assets/cat4.jpg";
 import image5 from "../assets/cat5.jpg";
 import image6 from "../assets/cat6.jpg";
 import Navbar from "../components/Navbar.js";
+import Footer from "../components/Footer.js";
 
 function Home() {
   useEffect(() => {
@@ -91,6 +92,7 @@ function Home() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

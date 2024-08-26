@@ -1,7 +1,7 @@
-import { Link, useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { gql, useApolloClient, useQuery } from "@apollo/client";
 import fallbackImage from "../assets/fallback-image.gif";
-import styles from "../App.module.css";
+import styles from "../css/Animal.module.css";
 import { ALL_ANIMALS } from "./Animals";
 import Navbar from "../components/Navbar.js";
 
@@ -29,23 +29,22 @@ const GET_ANIMAL = gql`
 `;
 
 export default function Animal() {
-  // Extract the pet_id from the URL
   const { id } = useParams();
+  // Get the Apollo Client instance
   const client = useApolloClient();
-  // Get the current URL location to get zip, range, and species
+  // Get the current location
   const location = useLocation();
 
-  // Extract query parameters from the URL
+  // Get the query parameters from the location
   const searchParams = new URLSearchParams(location.search);
   const zip = searchParams.get("zip") || "01063";
   const range = searchParams.range || 900;
   const species = searchParams.get("species") || "cat";
-  
+
   const { loading, error, data } = useQuery(GET_ANIMAL, {
     variables: { animalId: id },
   });
 
-  // Retrieve the cached data from ALL_ANIMALS query to get the animal's image
   const cachedAnimals = client.readQuery({
     query: ALL_ANIMALS,
     variables: {
@@ -58,7 +57,7 @@ export default function Animal() {
   if (loading) {
     return (
       <div>
-        <Navbar /> 
+        <Navbar />
         <div className={styles.loadingText}>Loading...</div>
       </div>
     );
@@ -73,8 +72,9 @@ export default function Animal() {
     return <p>Animal not found.</p>;
   }
 
+  // If the animal image is not available, attempt to use the cached image from the previous query.
+  // If the cached image is not available as well, use the fallback image.
   const animal = data.animal;
-  // Find the image URL from the cached data
   let animalImage = animal.original_url || fallbackImage;
   if (!animal.original_url && cachedAnimals) {
     const cachedAnimal = cachedAnimals.allAnimals.find(
@@ -88,64 +88,84 @@ export default function Animal() {
   return (
     <div className={styles.animalDetailsContainer}>
       <header className={styles.navbar}>
-        <div className={styles.logo}>
-          <Link to="/">PURRS</Link>
-        </div>
-        <nav className={styles.navLinks}>
-          <Link to="/animals">Adoption</Link>
-          <a href="#link2">Rescue</a>
-          <a href="#link3">TNR</a>
-          <a href="#link4">Donations</a>
-        </nav>
+        <Navbar />
       </header>
 
       <div className={styles.animalDetailsContent}>
         <h1>More about {animal.pet_name || "this pet"}</h1>
         <div className={styles.animalProfile}>
-        <img
+          <img
             src={animalImage}
             alt={animal.pet_name || "Animal"}
             className={styles.animalProfileImage}
           />
-          <div className={styles.animalProfileText}>
-            <blockquote>
-              "{animal.pet_name || "This pet"} is the sweetest {animal.primary_breed || "pet"} ever."
-              <cite>
-                {" "}
-                from {animal.addr_city || "somewhere"},{" "}
-                {animal.addr_state_code || "unknown"} shelter volunteer
-              </cite>
-            </blockquote>
+          <table className={styles.animalDetailsTable}>
+            <tbody>
+              <tr>
+                <th>Name</th>
+                <td>{animal.pet_name || "Unavailable"}</td>
+              </tr>
+              <tr>
+                <th>Age</th>
+                <td>{animal.age || "Unavailable"}</td>
+              </tr>
+              <tr>
+                <th>Sex</th>
+                <td>{animal.sex || "Unknown"}</td>
+              </tr>
+              <tr>
+                <th>Size</th>
+                <td>{animal.size || "Unavailable"}</td>
+              </tr>
+              <tr>
+                <th>City</th>
+                <td>{animal.addr_city || "Unknown"}</td>
+              </tr>
+              <tr>
+                <th>State</th>
+                <td>{animal.addr_state_code || "Unknown"}</td>
+              </tr>
+              <tr>
+                <th>Primary Breed</th>
+                <td>{animal.primary_breed || "Unknown"}</td>
+              </tr>
+              <tr>
+                <th>Secondary Breed</th>
+                <td>{animal.secondary_breed || "None"}</td>
+              </tr>
+              <tr>
+                <th>Color</th>
+                <td>{animal.color || "Unknown"}</td>
+              </tr>
+              <tr>
+                <th>Hair Length</th>
+                <td>{animal.hair_length || "Unknown"}</td>
+              </tr>
+              <tr>
+                <th>Special Needs</th>
+                <td>{animal.special_needs ? "Yes" : "No"}</td>
+              </tr>
+            </tbody>
+          </table>
+          {animal.video_url && (
             <p>
-              <strong>Age:</strong> {animal.age || "Unavailable"} <br />
-              <strong>Sex:</strong> {animal.sex || "Unknown"} <br />
-              <strong>Size:</strong> {animal.size || "Unavailable"} <br />
-              <strong>Breed:</strong> {animal.primary_breed || "Unknown"}{" "}
-              {animal.secondary_breed && ` & ${animal.secondary_breed}`} <br />
-              <strong>Color:</strong> {animal.color || "Unknown"} <br />
-              <strong>Hair Length:</strong> {animal.hair_length || "Unknown"} <br />
-              <strong>Special Needs:</strong> {animal.special_needs ? "Yes" : "No"} <br />
+              <a
+                href={animal.video_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Watch a video of {animal.pet_name || "this pet"}
+              </a>
             </p>
-            {animal.video_url && (
-              <p>
-                <a
-                  href={animal.video_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Watch a video of {animal.pet_name || "this pet"}
-                </a>
-              </p>
-            )}
-            <a
-              href={animal.pet_details_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.contactButton}
-            >
-              Contact Shelter
-            </a>
-          </div>
+          )}
+          <a
+            href={animal.pet_details_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.contactButton}
+          >
+            Contact Shelter
+          </a>
         </div>
       </div>
     </div>

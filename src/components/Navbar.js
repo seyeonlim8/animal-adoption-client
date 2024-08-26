@@ -1,16 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "../Navbar.module.css"; 
+import styles from "../css/Navbar.module.css";
 
 function Navbar() {
   return (
     <header className={styles.navbar}>
       <div className={styles.logo}>
-        <Link to="/">PURRS</Link>
+        <Link to="/" className={styles.purrs}>
+          P<span className={styles.ur}>UR</span>RS
+        </Link>
       </div>
       <nav className={styles.navLinks}>
         <Link to="/animals">Adoption</Link>
-        <a href="#link2">Rescue</a>
+        <a href="/rescue">Rescue</a>
         <a href="#link3">TNR</a>
         <a href="#link4">Donations</a>
       </nav>

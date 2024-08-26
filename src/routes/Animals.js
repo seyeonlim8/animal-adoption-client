@@ -1,6 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
-import styles from "../Animals.module.css";
+import styles from "../css/Animals.module.css";
 import fallbackImage from "../assets/fallback-image.gif";
 import { useState } from "react";
 import Navbar from "../components/Navbar.js";

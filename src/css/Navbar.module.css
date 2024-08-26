@@ -23,17 +23,13 @@
   left: 20px;
 }
 
-.logo a {
+.purrs {
   text-decoration: none;
   color: inherit;
 }
 
-.logo a:visited {
-  color: inherit; /* Ensure the color doesn't change once clicked */
-}
-
-.navLinks {
-  display: flex;
+.ur {
+  color: #54ae0f; /* Change this color to whatever you like */
 }
 
 .navLinks {
