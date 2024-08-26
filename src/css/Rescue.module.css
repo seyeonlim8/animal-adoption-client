@@ -146,6 +146,7 @@ button:active {
   font-weight: 600;
   color: #333;
   margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .noticeCard p {
@@ -153,4 +154,5 @@ button:active {
   color: #666;
   margin-bottom: 15px;
   line-height: 1.6;
+  margin-left: 20px;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../css/Rescue.module.css";
 import Navbar from "../components/Navbar";
 import StripeCheckout from "../components/StripeCheckout";
+import Footer from "../components/Footer";
 
 function Rescue() {
   const handleSubmit = async (event) => {
@@ -114,6 +115,10 @@ function Rescue() {
                 />
               </label>
               <label>
+                Address:
+                <input type="text" name="address" required />
+              </label>
+              <label>
                 Email:
                 <input type="email" name="email" required />
               </label>
@@ -134,6 +139,7 @@ function Rescue() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

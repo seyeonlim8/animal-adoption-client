@@ -1,5 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import {
+  AddressElement,
+  CardElement,
+  useElements,
+  useStripe,
+} from "@stripe/react-stripe-js";
+import React, { useEffect, useState } from "react";
 
 const totalPrice = 10000;
 
@@ -9,6 +14,7 @@ const CheckoutForm = () => {
   const [processing, setProcessing] = useState("");
   const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSecret] = useState("");
+  const [address, setAddress] = useState("");
 
   const stripe = useStripe();
   const elements = useElements();
@@ -29,6 +35,7 @@ const CheckoutForm = () => {
         setClientSecret(data.clientSecret);
       });
   }, []);
+
   const cardStyle = {
     style: {},
   };
@@ -59,11 +66,58 @@ const CheckoutForm = () => {
       setError(null);
       setProcessing(false);
       setSucceeded(true);
+      sendEmail(address);
+    }
+  };
+
+  // Send email to confirm payment
+  const sendEmail = async (address) => {
+    try {
+      const response = await fetch("http://localhost:3001/send-payment-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ address }),
+      });
+      if (response.ok) {
+        alert("Email sent successfully!");
+      } else {
+        alert("Email failed to send.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Email failed to send - error occurred.");
     }
   };
 
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
+      {/* Shipping information */}
+      <h3>Shipping Information</h3>
+      <h4>Please enter the address you wrote in Step 1.</h4>
+      <AddressElement
+        options={{
+          mode: "shipping",
+          fields: {
+            phone: "always",
+          },
+          validation: {
+            phone: {
+              required: "always",
+            },
+          },
+        }}
+        onChange={(event) => {
+          const address = event.value.address;
+          setAddress(address);
+        }}
+      />
+
+      {/* Card information */}
+      <br />
+      <h3>Card Information</h3>
+      <h4>Please enter your card information.</h4>
       <CardElement
         id="card-element"
         options={cardStyle}
@@ -83,6 +137,7 @@ const CheckoutForm = () => {
           {error}
         </div>
       )}
+
       {/* Show success message only if payment succeeded */}
       {succeeded && (
         <p className={`result-message`}>
