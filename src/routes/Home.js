@@ -8,6 +8,7 @@ import image5 from "../assets/cat5.jpg";
 import image6 from "../assets/cat6.jpg";
 import Navbar from "../components/Navbar.js";
 import Footer from "../components/Footer.js";
+import RandomCatFactCard from "../components/RandomCatFactCard.js";
 
 function Home() {
   useEffect(() => {
@@ -90,6 +91,9 @@ function Home() {
               </a>
             </div>
           </div>
+        </section>
+        <section>
+          <RandomCatFactCard />
         </section>
       </main>
       <Footer />

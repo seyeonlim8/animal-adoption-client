@@ -13,7 +13,7 @@ function Navbar() {
       <nav className={styles.navLinks}>
         <Link to="/animals">Adoption</Link>
         <a href="/rescue">Rescue</a>
-        <a href="#link3">TNR</a>
+        <a href="/tnr">TNR</a>
         <a href="#link4">Donations</a>
       </nav>
     </header>

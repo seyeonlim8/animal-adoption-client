@@ -1,0 +1,156 @@
+/* Container */
+.tnrContainer {
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+/* Main Image */
+.mainImageContainer {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.mainTitle {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.mainSubtitle {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Main Content */
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Section Styles */
+.section {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.section p,
+.section ul {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Notice Section */
+.noticeSection {
+  background-color: #fffbf0;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.noticeSection h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* CTA Button */
+.ctaButton {
+  display: inline-block;
+  background-color: #54ae0f;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.ctaButton:hover {
+  background-color: #46930c;
+}
+
+/* Orgs Section */
+.supportOrgsSection {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin-top: 40px;
+  border-radius: 8px;
+}
+
+.supportOrgsSection h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.orgLogosContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.orgLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.6s ease-in-out;
+}
+
+.orgLogo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #fff; /* Fallback background color */
+  object-fit: cover;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.6s ease-in-out;
+}
+
+.orgLogo p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+}
+
+.orgLogo:hover img {
+  transform: rotateY(360deg); /* Spin effect */
+}
+
+

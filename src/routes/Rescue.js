@@ -115,7 +115,7 @@ function Rescue() {
                 />
               </label>
               <label>
-                Address:
+                Delivery Address:
                 <input type="text" name="address" required />
               </label>
               <label>

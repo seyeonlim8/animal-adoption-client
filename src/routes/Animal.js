@@ -28,7 +28,7 @@ const GET_ANIMAL = gql`
   }
 `;
 
-export default function Animal() {
+function Animal() {
   const { id } = useParams();
   // Get the Apollo Client instance
   const client = useApolloClient();
@@ -171,3 +171,5 @@ export default function Animal() {
     </div>
   );
 }
+
+export default Animal;
