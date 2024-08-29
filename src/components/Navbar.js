@@ -14,7 +14,7 @@ function Navbar() {
         <Link to="/animals">Adoption</Link>
         <a href="/rescue">Rescue</a>
         <a href="/tnr">TNR</a>
-        <a href="#link4">Donations</a>
+        <a href="/donation">Donation</a>
       </nav>
     </header>
   );

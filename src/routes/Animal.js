@@ -4,6 +4,7 @@ import fallbackImage from "../assets/fallback-image.gif";
 import styles from "../css/Animal.module.css";
 import { ALL_ANIMALS } from "./Animals";
 import Navbar from "../components/Navbar.js";
+import Footer from "../components/Footer.js";
 
 // Query for getting animal by pet_id
 const GET_ANIMAL = gql`
@@ -82,7 +83,9 @@ function Animal() {
     );
     if (cachedAnimal) {
       animalImage = cachedAnimal.large_results_photo_url || fallbackImage;
-    }
+    } 
+  } else {
+    animalImage = fallbackImage;
   }
 
   return (
@@ -168,6 +171,7 @@ function Animal() {
           </a>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

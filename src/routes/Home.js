@@ -33,10 +33,10 @@ function Home() {
       <main className={styles.mainContent}>
         <section className={styles.hero}>
           <div className={styles.heroOverlay}></div>
-          <h1>Support Feral Cats</h1>
+          <h1>Make a Difference in the Lives of Feral Cats</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Join us in making a real difference by supporting initiatives that
+            help manage and improve the lives of these resilient animals.
           </p>
           <a
             href="https://www.google.com/maps/search/?api=1&query=animal+shelters+near+me"
@@ -48,25 +48,30 @@ function Home() {
           </a>
           <div className={styles.quoteSection}>
             <blockquote>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt."
+              "The greatness of a nation and its moral progress can be judged by
+              the way its animals are treated."
             </blockquote>
-            Maria Lopez, VP of Design at Mehsley
+            <cite>- Mahatma Gandhi</cite>
           </div>
         </section>
 
         <section className={styles.supportSection}>
           <h2>How You Can Support Feral Cats</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam,
+            Your involvement can change the lives of feral cats for the better.
+            Whether through adoption, rescue, or supporting TNR programs, every
+            effort counts. Here’s how you can help:
           </p>
           <div className={styles.supportOptions}>
             <div className={styles.supportOption}>
               <img alt="adoption" src={image4} className={styles.imageFormat} />
               <div className={styles.supportOptionText}>
-                Help rescued cats waiting for a new home at the shelter.
+                <strong>Adopt a Rescued Cat</strong>
+                <p>
+                  Give a feral cat a second chance by adopting. Many of these
+                  cats are waiting for a loving home where they can thrive. Your
+                  home could be their sanctuary.
+                </p>
               </div>
               <a href="/animals" className={styles.ctaButton}>
                 Learn More
@@ -75,7 +80,12 @@ function Home() {
             <div className={styles.supportOption}>
               <img alt="rescue" src={image5} className={styles.imageFormat} />
               <div className={styles.supportOptionText}>
-                Found a feral cat? Let us know. We can help you.
+                <strong>Rescue and Provide Care</strong>
+                <p>
+                  If you find a feral cat in distress, we’re here to help. We
+                  provide resources and support to ensure these cats receive the
+                  care they need.
+                </p>
               </div>
               <a href="/rescue" className={styles.ctaButton}>
                 Learn More
@@ -84,7 +94,12 @@ function Home() {
             <div className={styles.supportOption}>
               <img alt="tnr" src={image6} className={styles.imageFormat} />
               <div className={styles.supportOptionText}>
-                Support hospitals for TNR (Trap-Neuter-Return) Programs.
+                <strong>Support TNR Programs</strong>
+                <p>
+                  Trap-Neuter-Return is a humane and effective way to manage the
+                  feral cat population. Help improve the quality of life for
+                  those already on the street.
+                </p>
               </div>
               <a href="/donations" className={styles.ctaButton}>
                 Learn More

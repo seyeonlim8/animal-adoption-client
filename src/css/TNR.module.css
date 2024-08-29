@@ -33,11 +33,13 @@
   font-size: 36px;
   font-weight: bold;
   margin: 0;
+  color: #000;
 }
 
 .mainSubtitle {
   font-size: 18px;
   margin-top: 10px;
+  color: #000;
 }
 
 /* Main Content */
