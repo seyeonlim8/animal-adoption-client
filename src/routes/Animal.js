@@ -38,7 +38,7 @@ function Animal() {
 
   // Get the query parameters from the location
   const searchParams = new URLSearchParams(location.search);
-  const zip = searchParams.get("zip") || "01063";
+  const zip = searchParams.get("zip") || "90012";
   const range = searchParams.range || 900;
   const species = searchParams.get("species") || "cat";
 
@@ -84,9 +84,7 @@ function Animal() {
     if (cachedAnimal) {
       animalImage = cachedAnimal.large_results_photo_url || fallbackImage;
     } 
-  } else {
-    animalImage = fallbackImage;
-  }
+  } 
 
   return (
     <div className={styles.animalDetailsContainer}>

@@ -1,9 +1,16 @@
-import useScript from "./UseScript";
+import { useEffect } from "react";
 
 function DonationStripeCheckout() {
-  const [loading, error] = useScript("https://js.stripe.com/v3/buy-button.js");
-  if (error) return <p>Error loading Stripe Checkout: {error}</p>;
-  if (loading) return <p>Loading Stripe Checkout...</p>;
+    useEffect(() => {
+        const script = document.createElement("script");
+        script.src = "https://js.stripe.com/v3/buy-button.js";
+        script.async = true;
+        document.head.appendChild(script);
+    
+        return () => {
+          document.head.removeChild(script);
+        };
+      }, []);
 
   return (
     <stripe-buy-button

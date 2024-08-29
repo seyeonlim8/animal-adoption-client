@@ -26,11 +26,7 @@ PURRS is a web application designed to help users find and adopt pets, support r
 
 ## Tech Stacks
 
-### Frontend
-- React, React Router, Apollo Client, Stripe
-
-### Backend
-- GraphQL, Express, Nodemailer
+GraphQL, Apollo Client, React, Node.js, Express, JavaScript, HTML, CSS
 
 
 
