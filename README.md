@@ -9,6 +9,8 @@ PURRS is a web application designed to help users find and adopt pets, support r
 ![React App · 6 50pm · 08-29 (1)](https://github.com/user-attachments/assets/fe83c171-1fc8-4136-9b6a-2b90a59670cf)
 
 - Adoption Page: Allows users to search for animals available for adoption based on location and species.
+
+
 ![React App · 6 49pm · 08-29 (1)](https://github.com/user-attachments/assets/d0437845-31da-4a38-9b14-8b432b21c202)
 ![React App · 6 50pm · 08-29](https://github.com/user-attachments/assets/9eaec878-1ab5-467a-aa36-c10f13892342)
 
@@ -17,6 +19,7 @@ PURRS is a web application designed to help users find and adopt pets, support r
 ![React App · 6 50pm · 08-29 (2)](https://github.com/user-attachments/assets/e99398f2-0e16-47d8-971f-275cd0a0a8e8)
 
 - TNR Page: Information about Trap-Neuter-Return programs.
+
 ![React App · 6 51pm · 08-29](https://github.com/user-attachments/assets/d275c5ff-88ed-4571-a573-40358be9d3f9)
 
 - Donation Page: Allows users to make donations to support feral cat management programs.
