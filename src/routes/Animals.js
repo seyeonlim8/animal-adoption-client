@@ -29,7 +29,7 @@ export default function Animals() {
 
   const { loading, error, data, refetch } = useQuery(ALL_ANIMALS, {
     variables: {
-      zip: "01063", // default ZIP code
+      zip: "90012", // default ZIP code
       range: 900, // default range
       species: "cat", // default species
     },
