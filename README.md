@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# PURRS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React App · 6 49pm · 08-29](https://github.com/user-attachments/assets/a2d5c9a9-ab83-4ca2-bafa-a2c3754773c9)
 
-## Available Scripts
+PURRS is a web application designed to help users find and adopt pets, support rescue initiatives, and donate to causes that help manage and improve the lives of feral cats. The application provides various features such as browsing available animals for adoption, learning about TNR (Trap-Neuter-Return) programs, and making donations through Stripe.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+![React App · 6 50pm · 08-29 (1)](https://github.com/user-attachments/assets/fe83c171-1fc8-4136-9b6a-2b90a59670cf)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Adoption Page: Allows users to search for animals available for adoption based on location and species.
+![React App · 6 49pm · 08-29 (1)](https://github.com/user-attachments/assets/d0437845-31da-4a38-9b14-8b432b21c202)
+![React App · 6 50pm · 08-29](https://github.com/user-attachments/assets/9eaec878-1ab5-467a-aa36-c10f13892342)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Rescue Page: Allows users to submit trap rent requests for rescuing feral cats.
 
-### `npm test`
+![React App · 6 50pm · 08-29 (2)](https://github.com/user-attachments/assets/e99398f2-0e16-47d8-971f-275cd0a0a8e8)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- TNR Page: Information about Trap-Neuter-Return programs.
+![React App · 6 51pm · 08-29](https://github.com/user-attachments/assets/d275c5ff-88ed-4571-a573-40358be9d3f9)
 
-### `npm run build`
+- Donation Page: Allows users to make donations to support feral cat management programs.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stacks
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Frontend
+- React, React Router, Apollo Client, Stripe
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend
+- GraphQL, Express, Nodemailer
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
